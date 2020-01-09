@@ -1,0 +1,23 @@
+R_DEF: Internal format may change without notice
+local
+color full_transparent
+color white
+id appCompatImageButton
+id contentFrame
+id flashLightCheckbox
+id one
+id parent
+layout loading_dialog
+layout qr_screen
+string apr
+string aug
+string dec
+string feb
+string jan
+string jul
+string jun
+string mar
+string may
+string nov
+string oct
+string sept

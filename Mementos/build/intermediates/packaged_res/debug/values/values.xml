@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="full_transparent">#00858585</color>
+    <color name="white">#fff</color>
+    <string name="apr">Avr.</string>
+    <string name="aug">Août</string>
+    <string name="dec">Dec.</string>
+    <string name="feb">Fév.</string>
+    <string name="jan">Jan.</string>
+    <string name="jul">Juil.</string>
+    <string name="jun">Juin</string>
+    <string name="mar">Mar.</string>
+    <string name="may">Mai.</string>
+    <string name="nov">Nov.</string>
+    <string name="oct">Oct.</string>
+    <string name="sept">Sept.</string>
+</resources>

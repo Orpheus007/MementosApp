@@ -1,0 +1,4 @@
+#Thu Jan 09 14:43:46 CET 2020
+base.0=/Users/orpheus/AndroidStudioProjects/MementosApp/app/build/intermediates/dex/debug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

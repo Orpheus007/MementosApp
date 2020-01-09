@@ -1,0 +1,139 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/35cf4425cc831aa991746bc0aa306258/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/60b7c1a2e8aaf5a65d4c02527c78aab2/jetified-core-ktx-1.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cd5d2a8b868c1d5b41acfab41df06234/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/76526ff0c1874bed421f83c7c6178354/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/71d1be947d0d0be7ed4da7b23067325d/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/aea6dcd3e3f856d1f4770ded7cefd738/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/747c8790ec029df3880f490c056400a7/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/b65c02c748009a63ddbcf8046f72ee3c/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/66c4b9791bded86459a2d4a2e8914e96/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/aae2b775a746678e1707f0f155eff46c/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/e0cca9938b01726b71bf14c454dff589/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/9a23e3d11de1e07acc7bd658a55989d2/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/503c484a19e7b2b07f26536b983c79d8/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/dbc4c7048a27f202d6b78bdcb2746587/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/99f08cfc41ee277355d17f92af1c871f/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/f1574e6f1ca903d1fcf2e63c905233aa/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/187df4f34858a3207ea2e5c4dfceec6a/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/c09f1a72729e431b8e821f5641597d93/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cfe82452cf0cc3e05330859c827361fe/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/e3a1183059f49d148c77aa7a69a22bdc/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/f0e104304a0e505aae40b74279acd9f7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/84719292e8b6ff624c1b6d983dabd3cb/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:3:5-34
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:5:5-19:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cd5d2a8b868c1d5b41acfab41df06234/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cd5d2a8b868c1d5b41acfab41df06234/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/503c484a19e7b2b07f26536b983c79d8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/503c484a19e7b2b07f26536b983c79d8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/99f08cfc41ee277355d17f92af1c871f/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/99f08cfc41ee277355d17f92af1c871f/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/503c484a19e7b2b07f26536b983c79d8/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.gpg.mementosapp.MainActivity
+ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:12:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml:16:27-74
+uses-sdk
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/35cf4425cc831aa991746bc0aa306258/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/35cf4425cc831aa991746bc0aa306258/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/60b7c1a2e8aaf5a65d4c02527c78aab2/jetified-core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/60b7c1a2e8aaf5a65d4c02527c78aab2/jetified-core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cd5d2a8b868c1d5b41acfab41df06234/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cd5d2a8b868c1d5b41acfab41df06234/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/76526ff0c1874bed421f83c7c6178354/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/76526ff0c1874bed421f83c7c6178354/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/71d1be947d0d0be7ed4da7b23067325d/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/71d1be947d0d0be7ed4da7b23067325d/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/aea6dcd3e3f856d1f4770ded7cefd738/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/aea6dcd3e3f856d1f4770ded7cefd738/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/747c8790ec029df3880f490c056400a7/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/747c8790ec029df3880f490c056400a7/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/b65c02c748009a63ddbcf8046f72ee3c/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/b65c02c748009a63ddbcf8046f72ee3c/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/66c4b9791bded86459a2d4a2e8914e96/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/66c4b9791bded86459a2d4a2e8914e96/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/aae2b775a746678e1707f0f155eff46c/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/aae2b775a746678e1707f0f155eff46c/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/e0cca9938b01726b71bf14c454dff589/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/e0cca9938b01726b71bf14c454dff589/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/9a23e3d11de1e07acc7bd658a55989d2/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/9a23e3d11de1e07acc7bd658a55989d2/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/503c484a19e7b2b07f26536b983c79d8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/503c484a19e7b2b07f26536b983c79d8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/dbc4c7048a27f202d6b78bdcb2746587/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/dbc4c7048a27f202d6b78bdcb2746587/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/99f08cfc41ee277355d17f92af1c871f/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/99f08cfc41ee277355d17f92af1c871f/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/f1574e6f1ca903d1fcf2e63c905233aa/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/f1574e6f1ca903d1fcf2e63c905233aa/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/187df4f34858a3207ea2e5c4dfceec6a/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/187df4f34858a3207ea2e5c4dfceec6a/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/c09f1a72729e431b8e821f5641597d93/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/c09f1a72729e431b8e821f5641597d93/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cfe82452cf0cc3e05330859c827361fe/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/cfe82452cf0cc3e05330859c827361fe/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/e3a1183059f49d148c77aa7a69a22bdc/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/e3a1183059f49d148c77aa7a69a22bdc/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/f0e104304a0e505aae40b74279acd9f7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/f0e104304a0e505aae40b74279acd9f7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/84719292e8b6ff624c1b6d983dabd3cb/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/orpheus/.gradle/caches/transforms-2/files-2.1/84719292e8b6ff624c1b6d983dabd3cb/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/orpheus/AndroidStudioProjects/MementosApp/app/src/main/AndroidManifest.xml
