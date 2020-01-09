@@ -122,3 +122,4 @@ suspend fun String.compress(): ByteArray {
 
 suspend fun ByteArray.deCompress(): String = GZIPInputStream(this.inputStream()).bufferedReader(Charsets.UTF_8).use { it.readText() }
 
+suspend fun String.hello(): String = "HELLO WORLD FROM MEMENTOS"
