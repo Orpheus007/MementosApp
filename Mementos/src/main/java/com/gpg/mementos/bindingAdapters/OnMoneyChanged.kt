@@ -19,7 +19,6 @@ fun onMoneyChanged(editText: EditText, watcher: Watcher) {
     decimalFormat.applyPattern("#,###.##")
     decimalFormat.isDecimalSeparatorAlwaysShown = true
     decimalFormatNumberFormat.applyPattern("#,###")
-    val hasFractionalPart: Boolean = false
 
     editText.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
