@@ -1,0 +1,14 @@
+import io.ktor.http.*
+
+data class HttpError(
+    val statusCode: HttpStatusCode,
+    val exception: String,
+    val msg: String = exception.substringAfter(" \"").substringBefore("\"")
+) : Exception() {
+
+    companion object {
+        fun badJsonError(): HttpError {
+            return HttpError(HttpStatusCode.BadRequest, "Wrong data type.")
+        }
+    }
+}
