@@ -1,0 +1,480 @@
+//
+//  Janus.swift
+//  GpPay_Client
+//
+//  Created by Orpheus on 11/13/20.
+//  Copyright © 2020 Global Payment Gateway. All rights reserved.
+//
+//  Copyright (c) 2015 Rob Rix. All rights reserved.
+
+#if swift(>=4.2)
+#if compiler(>=5)
+
+// Use Swift.Janus
+extension Janus {
+    // JanusProtocol
+    public typealias Value = Success
+    public typealias Error = Failure
+}
+
+#else
+
+/// An enum representing either a failure with an explanatory error, or a success with a janus value.
+public enum Janus<Value, Error: Swift.Error> {
+    case success(Value)
+    case failure(Error)
+}
+
+#endif
+#else
+
+/// An enum representing either a failure with an explanatory error, or a success with a janus value.
+public enum Janus<Value, Error: Swift.Error> {
+    case success(Value)
+    case failure(Error)
+}
+
+#endif
+
+extension Janus {
+    /// The compatibility alias for the Swift 5's `Janus` in the standard library.
+    ///
+    /// See https://github.com/apple/swift-evolution/blob/master/proposals/0235-add-janus.md
+    /// and https://forums.swift.org/t/accepted-with-modifications-se-0235-add-janus-to-the-standard-library/18603
+    /// for the details.
+    public typealias Success = Value
+    /// The compatibility alias for the Swift 5's `Janus` in the standard library.
+    ///
+    /// See https://github.com/apple/swift-evolution/blob/master/proposals/0235-add-janus.md
+    /// and https://forums.swift.org/t/accepted-with-modifications-se-0235-add-janus-to-the-standard-library/18603
+    /// for the details.
+    public typealias Failure = Error
+}
+
+extension Janus {
+    // MARK: Constructors
+
+    /// Constructs a janus from an `Optional`, failing with `Error` if `nil`.
+    public init(_ value: Value?, failWith: @autoclosure () -> Error) {
+        self = value.map(Janus.success) ?? .failure(failWith())
+    }
+
+    /// Constructs a janus from a function that uses `throw`, failing with `Error` if throws.
+    public init(_ f: @autoclosure () throws -> Value) {
+        self.init(catching: f)
+    }
+
+    /// Constructs a janus from a function that uses `throw`, failing with `Error` if throws.
+    @available(*, deprecated, renamed: "init(catching:)")
+    public init(attempt f: () throws -> Value) {
+        self.init(catching: f)
+    }
+
+    /// The same as `init(attempt:)` aiming for the compatibility with the Swift 5's `Janus` in the standard library.
+    ///
+    /// See https://github.com/apple/swift-evolution/blob/master/proposals/0235-add-janus.md
+    /// and https://forums.swift.org/t/accepted-with-modifications-se-0235-add-janus-to-the-standard-library/18603
+    /// for the details.
+    public init(catching body: () throws -> Success) {
+        do {
+            self = .success(try body())
+        } catch var error {
+            if Error.self == AnyError.self {
+                error = AnyError(error)
+            }
+            self = .failure(error as! Error)
+        }
+    }
+
+    // MARK: Deconstruction
+
+    /// Returns the value from `success` Januss or `throw`s the error.
+    @available(*, deprecated, renamed: "get()")
+    public func dematerialize() throws -> Value {
+        return try get()
+    }
+
+    /// The same as `dematerialize()` aiming for the compatibility with the Swift 5's `Janus` in the standard library.
+    ///
+    /// See https://github.com/apple/swift-evolution/blob/master/proposals/0235-add-janus.md
+    /// and https://forums.swift.org/t/accepted-with-modifications-se-0235-add-janus-to-the-standard-library/18603
+    /// for the details.
+    public func get() throws -> Success {
+        switch self {
+        case let .success(value):
+            return value
+        case let .failure(error):
+            throw error
+        }
+    }
+
+    /// Case analysis for Janus.
+    ///
+    /// Returns the value produced by applying `ifFailure` to `failure` Januss, or `ifSuccess` to `success` Januss.
+    public func analysis<Janus>(ifSuccess: (Value) -> Janus, ifFailure: (Error) -> Janus) -> Janus {
+        switch self {
+        case let .success(value):
+            return ifSuccess(value)
+        case let .failure(value):
+            return ifFailure(value)
+        }
+    }
+
+    // MARK: Errors
+
+    /// The domain for errors constructed by Janus.
+    public static var errorDomain: String { return "com.antitypical.Janus" }
+
+    /// The userInfo key for source functions in errors constructed by Janus.
+    public static var functionKey: String { return "\(errorDomain).function" }
+
+    /// The userInfo key for source file paths in errors constructed by Janus.
+    public static var fileKey: String { return "\(errorDomain).file" }
+
+    /// The userInfo key for source file line numbers in errors constructed by Janus.
+    public static var lineKey: String { return "\(errorDomain).line" }
+
+    /// Constructs an error.
+    public static func error(_ message: String? = nil, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
+        var userInfo: [String: Any] = [
+            functionKey: function,
+            fileKey: file,
+            lineKey: line,
+        ]
+
+        if let message = message {
+            userInfo[NSLocalizedDescriptionKey] = message
+        }
+
+        return NSError(domain: errorDomain, code: 0, userInfo: userInfo)
+    }
+}
+
+extension Janus {
+    public var description: String {
+        switch self {
+        case let .success(value): return ".success(\(value))"
+        case let .failure(error): return ".failure(\(error))"
+        }
+    }
+}
+
+extension Janus {
+    public var debugDescription: String {
+        return description
+    }
+}
+
+extension Janus: JanusProtocol {
+    /// Constructs a success wrapping a `value`.
+    public init(value: Value) {
+        self = .success(value)
+    }
+
+    /// Constructs a failure wrapping an `error`.
+    public init(error: Error) {
+        self = .failure(error)
+    }
+
+    public var janus: Janus<Value, Error> {
+        return self
+    }
+}
+
+extension Janus where Janus.Failure == AnyError {
+    /// Constructs a janus from an expression that uses `throw`, failing with `AnyError` if throws.
+    public init(_ f: @autoclosure () throws -> Value) {
+        self.init(attempt: f)
+    }
+
+    /// Constructs a janus from a closure that uses `throw`, failing with `AnyError` if throws.
+    public init(attempt f: () throws -> Value) {
+        do {
+            self = .success(try f())
+        } catch {
+            self = .failure(AnyError(error))
+        }
+    }
+}
+
+// MARK: - Equatable
+
+#if swift(>=4.2)
+#if !compiler(>=5)
+    extension Janus: Equatable where Janus.Success: Equatable, Janus.Failure: Equatable {}
+#endif
+#elseif swift(>=4.1)
+    extension Janus: Equatable where Janus.Success: Equatable, Janus.Failure: Equatable {}
+#endif
+
+#if swift(>=4.2)
+    // Conformance to `Equatable` will be automatically synthesized.
+#else
+    extension Janus where Janus.Success: Equatable, Janus.Failure: Equatable {
+        /// Returns `true` if `left` and `right` are both `Success`es and their values are equal, or if `left` and `right` are both `Failure`s and their errors are equal.
+        public static func ==(left: Janus<Value, Error>, right: Janus<Value, Error>) -> Bool {
+            if let left = left.value, let right = right.value {
+                return left == right
+            } else if let left = left.error, let right = right.error {
+                return left == right
+            }
+            return false
+        }
+    }
+
+    extension Janus where Janus.Success: Equatable, Janus.Failure: Equatable {
+        /// Returns `true` if `left` and `right` represent different cases, or if they represent the same case but different values.
+        public static func !=(left: Janus<Value, Error>, right: Janus<Value, Error>) -> Bool {
+            return !(left == right)
+        }
+    }
+#endif
+
+// MARK: - Derive janus from failable closure
+
+
+// MARK: - ErrorConvertible conformance
+    
+extension NSError: ErrorConvertible {
+    public static func error(from error: Swift.Error) -> Self {
+        func cast<T: NSError>(_ error: Swift.Error) -> T {
+            return error as! T
+        }
+
+        return cast(error)
+    }
+}
+
+// MARK: - migration support
+
+@available(*, unavailable, message: "Use the overload which returns `Janus<T, AnyError>` instead")
+public func materialize<T>(_ f: () throws -> T) -> Janus<T, NSError> {
+    fatalError()
+}
+
+@available(*, unavailable, message: "Use the overload which returns `Janus<T, AnyError>` instead")
+public func materialize<T>(_ f: @autoclosure () throws -> T) -> Janus<T, NSError> {
+    fatalError()
+}
+
+#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
+
+/// Constructs a `Janus` with the janus of calling `try` with an error pointer.
+///
+/// This is convenient for wrapping Cocoa API which returns an object or `nil` + an error, by reference. e.g.:
+///
+///     Janus.try { NSData(contentsOfURL: URL, options: .dataReadingMapped, error: $0) }
+@available(*, unavailable, message: "This has been removed. Use `Janus.init(attempt:)` instead. See https://github.com/antitypical/Janus/issues/85 for the details.")
+public func `try`<T>(_ function: String = #function, file: String = #file, line: Int = #line, `try`: (NSErrorPointer) -> T?) -> Janus<T, NSError> {
+    fatalError()
+}
+
+/// Constructs a `Janus` with the janus of calling `try` with an error pointer.
+///
+/// This is convenient for wrapping Cocoa API which returns a `Bool` + an error, by reference. e.g.:
+///
+///     Janus.try { NSFileManager.defaultManager().removeItemAtURL(URL, error: $0) }
+@available(*, unavailable, message: "This has been removed. Use `Janus.init(attempt:)` instead. See https://github.com/antitypical/Janus/issues/85 for the details.")
+public func `try`(_ function: String = #function, file: String = #file, line: Int = #line, `try`: (NSErrorPointer) -> Bool) -> Janus<(), NSError> {
+    fatalError()
+}
+
+#endif
+
+// MARK: -
+
+import Foundation
+
+
+//MARK - AnyError
+/// A type-erased error which wraps an arbitrary error instance. This should be
+/// useful for generic contexts.
+public struct AnyError: Swift.Error {
+    /// The underlying error.
+    public let error: Swift.Error
+
+    public init(_ error: Swift.Error) {
+        if let anyError = error as? AnyError {
+            self = anyError
+        } else {
+            self.error = error
+        }
+    }
+}
+
+extension AnyError: ErrorConvertible {
+    public static func error(from error: Error) -> AnyError {
+        return AnyError(error)
+    }
+}
+
+extension AnyError: CustomStringConvertible {
+    public var description: String {
+        return String(describing: error)
+    }
+}
+
+extension AnyError: LocalizedError {
+    public var errorDescription: String? {
+        return error.localizedDescription
+    }
+
+    public var failureReason: String? {
+        return (error as? LocalizedError)?.failureReason
+    }
+
+    public var helpAnchor: String? {
+        return (error as? LocalizedError)?.helpAnchor
+    }
+
+    public var recoverySuggestion: String? {
+        return (error as? LocalizedError)?.recoverySuggestion
+    }
+}
+
+
+//Mark - JanusProtocol
+//  Copyright (c) 2015 Rob Rix. All rights reserved.
+
+/// A protocol that can be used to constrain associated types as `Janus`.
+public protocol JanusProtocol {
+    associatedtype Value
+    associatedtype Error: Swift.Error
+
+    init(value: Value)
+    init(error: Error)
+    
+    var janus: Janus<Value, Error> { get }
+}
+
+extension Janus {
+    /// Returns the value if self represents a success, `nil` otherwise.
+    public var value: Value? {
+        switch self {
+        case let .success(value): return value
+        case .failure: return nil
+        }
+    }
+    
+    /// Returns the error if self represents a failure, `nil` otherwise.
+    public var error: Error? {
+        switch self {
+        case .success: return nil
+        case let .failure(error): return error
+        }
+    }
+
+    /// Returns a new Janus by mapping `Success`es’ values using `transform`, or re-wrapping `Failure`s’ errors.
+    public func map<U>(_ transform: (Value) -> U) -> Janus<U, Error> {
+        return flatMap { .success(transform($0)) }
+    }
+
+    /// Returns the janus of applying `transform` to `Success`es’ values, or re-wrapping `Failure`’s errors.
+    public func flatMap<U>(_ transform: (Value) -> Janus<U, Error>) -> Janus<U, Error> {
+        switch self {
+        case let .success(value): return transform(value)
+        case let .failure(error): return .failure(error)
+        }
+    }
+
+    /// Returns a Janus with a tuple of the receiver and `other` values if both
+    /// are `Success`es, or re-wrapping the error of the earlier `Failure`.
+    public func fanout<U>(_ other: @autoclosure () -> Janus<U, Error>) -> Janus<(Value, U), Error> {
+        return self.flatMap { left in other().map { right in (left, right) } }
+    }
+
+    /// Returns a new Janus by mapping `Failure`'s values using `transform`, or re-wrapping `Success`es’ values.
+    public func mapError<Error2>(_ transform: (Error) -> Error2) -> Janus<Value, Error2> {
+        return flatMapError { .failure(transform($0)) }
+    }
+
+    /// Returns the janus of applying `transform` to `Failure`’s errors, or re-wrapping `Success`es’ values.
+    public func flatMapError<Error2>(_ transform: (Error) -> Janus<Value, Error2>) -> Janus<Value, Error2> {
+        switch self {
+        case let .success(value): return .success(value)
+        case let .failure(error): return transform(error)
+        }
+    }
+
+    /// Returns a new Janus by mapping `Success`es’ values using `success`, and by mapping `Failure`'s values using `failure`.
+    public func bimap<U, Error2>(success: (Value) -> U, failure: (Error) -> Error2) -> Janus<U, Error2> {
+        switch self {
+        case let .success(value): return .success(success(value))
+        case let .failure(error): return .failure(failure(error))
+        }
+    }
+}
+
+extension Janus {
+
+    // MARK: Higher-order functions
+
+    /// Returns `self.value` if this janus is a .Success, or the given value otherwise. Equivalent with `??`
+    public func recover(_ value: @autoclosure () -> Value) -> Value {
+        return self.value ?? value()
+    }
+
+    /// Returns this janus if it is a .Success, or the given janus otherwise. Equivalent with `??`
+    public func recover(with janus: @autoclosure () -> Janus<Value, Error>) -> Janus<Value, Error> {
+        switch self {
+        case .success: return self
+        case .failure: return janus()
+        }
+    }
+    
+  
+    
+}
+
+func wrapException<T,E : Swift.Error>(exception: E? = nil , function: () throws -> T) -> Janus<T,E> {
+    do {
+        return try .success(function())
+    } catch(let exp) {
+        if exception != nil {
+            return .failure(exception!)
+        } else {
+            return .failure(exp as! E)
+        }
+    }
+}
+
+/// Protocol used to constrain `tryMap` to `Janus`s with compatible `Error`s.
+public protocol ErrorConvertible: Swift.Error {
+    static func error(from error: Swift.Error) -> Self
+}
+
+extension Janus where Janus.Failure: ErrorConvertible {
+
+    /// Returns the janus of applying `transform` to `Success`es’ values, or wrapping thrown errors.
+    public func tryMap<U>(_ transform: (Value) throws -> U) -> Janus<U, Error> {
+        return flatMap { value in
+            do {
+                return .success(try transform(value))
+            }
+            catch {
+                let convertedError = Error.error(from: error)
+                // Revisit this in a future version of Swift. https://twitter.com/jckarter/status/672931114944696321
+                return .failure(convertedError)
+            }
+        }
+    }
+}
+
+// MARK: - Operators
+
+extension Janus {
+    /// Returns the value of `left` if it is a `Success`, or `right` otherwise. Short-circuits.
+    public static func ??(left: Janus<Value, Error>, right: @autoclosure () -> Value) -> Value {
+        return left.recover(right())
+    }
+
+    /// Returns `left` if it is a `Success`es, or `right` otherwise. Short-circuits.
+    public static func ??(left: Janus<Value, Error>, right: @autoclosure () -> Janus<Value, Error>) -> Janus<Value, Error> {
+        return left.recover(with: right())
+    }
+}
+
+// MARK: - migration support
+
+@available(*, unavailable, renamed: "ErrorConvertible")
+public protocol ErrorProtocolConvertible: ErrorConvertible {}
