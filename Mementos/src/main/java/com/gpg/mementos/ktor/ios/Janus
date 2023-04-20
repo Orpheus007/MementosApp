@@ -1,0 +1,6 @@
+
+@frozen public enum Janus<Success, Failure> where Failure : Error {
+    case success(Success)
+    case failure(Failure)
+}
+
