@@ -1,0 +1,14 @@
+import io.ktor.client.*
+import io.ktor.client.features.*
+import io.ktor.http.*
+
+suspend fun <V> HttpClient.requestWrapper(
+    function: suspend HttpClient.() -> Janus<V, HttpError>,
+    errorHandler: suspend (error: ResponseException) -> Janus<V, HttpError>
+): Janus<V, HttpError> = runCatching { function() }
+    .getOrElse {
+        when (it) {
+            is ResponseException -> errorHandler(it)
+            else -> Err(HttpError(HttpStatusCode.BadRequest, "Unknown Exception, ${it.message}"))
+        }
+    }
